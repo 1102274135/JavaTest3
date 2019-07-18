@@ -1,0 +1,6 @@
+FROM registry.saas.hand-china.com/tools/mysql:5.6
+VOLUME bai
+COPY sakila-data.sql sakila-data.sql
+COPY sakila-schema.sql sakila-schema.sql
+RUN [source,sakila-data.sql]
+RUN [source,sakila-schema.sql]
